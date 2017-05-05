@@ -12,3 +12,28 @@
 // We're going to run this function on our new, super-hip Macbook Pro With Retina Display™.
 // Thing is, the damn thing came with the RAM soldered right to the motherboard, so we can't upgrade our RAM.
 // So we need to optimize for space!
+
+function findDups(numbers) {
+  let result = [];
+  for (var i = 0; i < numbers.length; i++) {
+    var seenIt = false;
+    for (var j = 0; j < numbers.length; j++) {
+      if (numbers[i] === numbers[j] && i !== j) {
+        if (seenIt) {
+          result.push(numbers[i])
+        } else {
+          seenIt = true;
+        }
+      }
+    }
+
+  }
+  if (result.length === 0) {
+    console.log('No dups')
+  }
+  console.log(result)
+}
+
+
+findDups([1,3,5,3,7,8,3])
+findDups([1,3,5,3,7,8,3,7])
